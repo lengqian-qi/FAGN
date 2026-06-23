@@ -17,11 +17,11 @@ conda env create -f environment.yml
 The HCP dataset can be downloaded in [HCP](https://humanconnectome.org/study/hcp-young-adult/data-use-terms).
 
 ## Frenet-Serret Representation
-We use the FrameNet_representation_from_trk.py script to process the raw .trk files. The pipeline consists of two main steps:
-(1) Resampling: each fier tract is resampled to a fixed number of points;
-(2) Frenet–Serret representation: for each point, we compute and append three geometric vectors—the tangent (T), normal (N), and binormal (B).
+We use the `FrameNet_representation_from_trk.py` script to process the raw .trk files. The pipeline consists of two main steps:  
+(1) Resampling: each fier tract is resampled to a fixed number of points;  
+(2) Frenet–Serret representation: for each point, we compute and append three geometric vectors—the tangent (T), normal (N), and binormal (B).  
 
-As a result, we obtain a feature matrix of shape (N, P, 12) (where N is the number of samples and P is the fixed number of points) along with corresponding label vectors of shape (N,).
+As a result, we obtain a feature matrix of shape (N, P, 12) (where N is the number of samples and P is the fixed number of points) along with corresponding label vectors of shape (N,).  
 The current implementation is built upon the directory structure of the HCP dataset. Although the code can be extended to other datasets, users must ensure that the folder organization follows the same format as HCP, i.e.:
 
 ```dataset
